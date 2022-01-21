@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,6 +192,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include=".editorconfig" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -236,6 +238,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -252,6 +256,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TkStore.Core\TkStore.Core.csproj">
+      <Project>{61ad8667-e2fa-4fb3-97f9-37070e66e446}</Project>
+      <Name>TkStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TkStore.Data.AccessInMemory\TkStore.Data.AccessInMemory.csproj">
+      <Project>{6548f44b-3521-4609-97cb-6c0faa63110f}</Project>
+      <Name>TkStore.Data.AccessInMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TkStore.DataAccess\TkStore.DataAccess.csproj">
+      <Project>{46f7457a-676b-42bb-8154-87b87893b458}</Project>
+      <Name>TkStore.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TkStore.Services\TkStore.Services.csproj">
+      <Project>{c99f6160-0767-4f93-8e99-4a897415eaff}</Project>
+      <Name>TkStore.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

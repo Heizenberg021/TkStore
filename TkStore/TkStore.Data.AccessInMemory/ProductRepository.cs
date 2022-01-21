@@ -24,12 +24,10 @@ namespace TkStore.DataAccess.InMemory
         {
             cache["products"] = products;
         }
-
         public void Insert(Product p)
         {
             products.Add(p);
         }
-
         public void Update(Product product)
         {
             Product productToUpdate = products.Find(p => p.ID == product.ID);
@@ -42,13 +40,28 @@ namespace TkStore.DataAccess.InMemory
                 throw new Exception("Product not found");
             }
         }
-
         public Product Find(string ID)
         {
             Product product = products.Find(p => p.ID == ID);
             if (product != null)
             {
                 return product;
+            }
+            else
+            {
+                throw new Exception("Product not found");
+            }
+        }
+        public IQueryable<Product> Collection()
+        {
+            return products.AsQueryable();
+        }
+        public void Delete(string ID)
+        {
+            Product productToDelete = products.Find(p => p.ID == ID);
+            if (productToDelete != null)
+            {
+                products.Remove(productToDelete);
             }
             else
             {
