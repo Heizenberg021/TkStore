@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -240,6 +241,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,9 +269,9 @@
       <Project>{61ad8667-e2fa-4fb3-97f9-37070e66e446}</Project>
       <Name>TkStore.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TkStore.Data.AccessInMemory\TkStore.Data.AccessInMemory.csproj">
+    <ProjectReference Include="..\TkStore.Data.AccessInMemory\TkStore.DataAccess.InMemory.csproj">
       <Project>{6548f44b-3521-4609-97cb-6c0faa63110f}</Project>
-      <Name>TkStore.Data.AccessInMemory</Name>
+      <Name>TkStore.DataAccess.InMemory</Name>
     </ProjectReference>
     <ProjectReference Include="..\TkStore.DataAccess\TkStore.DataAccess.csproj">
       <Project>{46f7457a-676b-42bb-8154-87b87893b458}</Project>

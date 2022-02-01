@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TkStore.Core", "TkStore.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TkStore.DataAccess", "TkStore.DataAccess\TkStore.DataAccess.csproj", "{46F7457A-676B-42BB-8154-87B87893B458}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TkStore.Data.AccessInMemory", "TkStore.Data.AccessInMemory\TkStore.Data.AccessInMemory.csproj", "{6548F44B-3521-4609-97CB-6C0FAA63110F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TkStore.DataAccess.InMemory", "TkStore.Data.AccessInMemory\TkStore.DataAccess.InMemory.csproj", "{6548F44B-3521-4609-97CB-6C0FAA63110F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TkStore.Services", "TkStore.Services\TkStore.Services.csproj", "{C99F6160-0767-4F93-8E99-4A897415EAFF}"
 EndProject
