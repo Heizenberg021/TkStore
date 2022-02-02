@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace TkStore.Core.Models
 {
-    public class ProductCategory
+    public class productCategory : BaseEntity
     {
-        public string ID { get; set; }
         public string Category { get; set; }
-        public ProductCategory()
-        {
-            this.ID = Guid.NewGuid().ToString();
-        }
 
-        public ProductCategory Find(Func<object, bool> p)
+
+        public productCategory Find(Func<object, bool> p)
         {
             throw new NotImplementedException();
         }

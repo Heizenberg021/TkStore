@@ -11,12 +11,12 @@ namespace TkStore.UI.Controllers
 {
     public class ProductController : Controller
     {
-        ProductRepository context;
-        CategoryRepository productCategories;
+        InMemoryRepository<Product> context;
+        InMemoryRepository<productCategory> productCategories;
         public ProductController()
         {
-            context = new ProductRepository();
-            productCategories = new CategoryRepository();
+            context = new InMemoryRepository<Product>();
+            productCategories = new InMemoryRepository<productCategory>();
         }
         // GET: Product
         public ActionResult Index()

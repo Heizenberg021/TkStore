@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace TkStore.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public string ID { get; set; }
+
         [StringLength(30)]
         [DisplayName("ProductName")]
         public string Name { get; set; }
@@ -19,9 +19,6 @@ namespace TkStore.Core.Models
         public string Price { get; set; }
         public string Category { get; set; }
         public string Image { get; set; }
-        public Product()
-        {
-            this.ID = Guid.NewGuid().ToString();
-        }
+        public object ID { get; set; }
     }
 }

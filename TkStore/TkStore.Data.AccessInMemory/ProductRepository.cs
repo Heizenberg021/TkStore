@@ -42,7 +42,7 @@ namespace TkStore.DataAccess.InMemory
         }
         public Product Find(string ID)
         {
-            Product product = products.Find(p => p.ID == ID);
+            Product product = products.Find(p => p.Id == ID);
             if (product != null)
             {
                 return product;
@@ -58,7 +58,7 @@ namespace TkStore.DataAccess.InMemory
         }
         public void Delete(string ID)
         {
-            Product productToDelete = products.Find(p => p.ID == ID);
+            Product productToDelete = products.Find(p => p.Id == ID);
             if (productToDelete != null)
             {
                 products.Remove(productToDelete);

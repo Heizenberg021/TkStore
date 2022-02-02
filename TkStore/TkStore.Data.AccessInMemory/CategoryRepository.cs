@@ -11,26 +11,26 @@ namespace TkStore.DataAccess.InMemory
     public class CategoryRepository
     {
         ObjectCache cache = MemoryCache.Default;
-        List<ProductCategory> productCategories;
+        List<productCategory> productCategories;
         public CategoryRepository()
         {
-            productCategories = cache["categories"] as List<ProductCategory>;
+            productCategories = cache["categories"] as List<productCategory>;
             if (productCategories == null)
             {
-                productCategories = new List<ProductCategory>();
+                productCategories = new List<productCategory>();
             }
         }
         public void Commit()
         {
             cache["productCategories"] = productCategories;
         }
-        public void Insert(ProductCategory p)
+        public void Insert(productCategory p)
         {
             productCategories.Add(p);
         }
-        public void Update(ProductCategory productCategory)
+        public void Update(productCategory productCategory)
         {
-            ProductCategory categoryToUpdate = productCategories.Find(p => p.ID == productCategory.ID);
+            productCategory categoryToUpdate = productCategories.Find(p => p.Id == productCategory.Id);
             if (categoryToUpdate != null)
             {
                 categoryToUpdate = productCategory;
@@ -40,9 +40,9 @@ namespace TkStore.DataAccess.InMemory
                 throw new Exception("category not found");
             }
         }
-        public ProductCategory Find(string ID)
+        public productCategory Find(string ID)
         {
-            ProductCategory productCategory = productCategories.Find(p => p.ID == ID);
+            productCategory productCategory = productCategories.Find(p => p.Id == ID);
             if (productCategory != null)
             {
                 return productCategory;
@@ -52,13 +52,13 @@ namespace TkStore.DataAccess.InMemory
                 throw new Exception("Category not found");
             }
         }
-        public IQueryable<ProductCategory> Collection()
+        public IQueryable<productCategory> Collection()
         {
             return productCategories.AsQueryable();
         }
         public void Delete(string ID)
         {
-            ProductCategory categoryToDelete = productCategories.Find(p => p.ID == ID);
+            productCategory categoryToDelete = productCategories.Find(p => p.Id == ID);
             if (categoryToDelete != null)
             {
                 productCategories.Remove(categoryToDelete);

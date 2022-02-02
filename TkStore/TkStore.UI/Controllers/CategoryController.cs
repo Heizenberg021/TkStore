@@ -11,24 +11,24 @@ namespace TkStore.UI.Controllers
 {
     public class CategoryController : Controller
     {
-        CategoryRepository context;
+        InMemoryRepository<productCategory> context;
         public CategoryController()
         {
-            context = new CategoryRepository();
+            context = new InMemoryRepository<productCategory>();
         }
         // GET: Category
         public ActionResult Index()
         {
-            List<ProductCategory> productCategories = context.Collection().ToList();
+            List<productCategory> productCategories = context.Collection().ToList();
             return View(productCategories);
         }
         public ActionResult Create()
         {
-            ProductCategory ProductCategory = new ProductCategory();
+            productCategory ProductCategory = new productCategory();
             return View(ProductCategory);
         }
         [HttpPost]
-        public ActionResult Create(ProductCategory ProductCategory)
+        public ActionResult Create(productCategory ProductCategory)
         {
             if (ModelState.IsValid)
             {
@@ -43,7 +43,7 @@ namespace TkStore.UI.Controllers
         }
         public ActionResult Edit(string ID)
         {
-            ProductCategory productCategory = context.Find(ID);
+            productCategory productCategory = context.Find(ID);
             if (productCategory == null)
             {
                 return HttpNotFound();
@@ -53,9 +53,9 @@ namespace TkStore.UI.Controllers
                 return View(productCategory);
             }
         }
-        public ActionResult Edit(ProductCategory productCategory, string ID)
+        public ActionResult Edit(productCategory productCategory, string ID)
         {
-            ProductCategory ProductCategory = context.Find(ID);
+            productCategory ProductCategory = context.Find(ID);
             if (productCategory == null)
             {
                 return HttpNotFound();
@@ -75,7 +75,7 @@ namespace TkStore.UI.Controllers
         }
         public ActionResult Delete(string ID)
         {
-            ProductCategory categoryToDelete = context.Find(ID);
+            productCategory categoryToDelete = context.Find(ID);
             if (categoryToDelete == null)
             {
                 return HttpNotFound();
@@ -89,7 +89,7 @@ namespace TkStore.UI.Controllers
         [ActionName("Delete")]
         public ActionResult ConfirmDelete(string ID)
         {
-            ProductCategory categoryToDelete = context.Find(ID);
+            productCategory categoryToDelete = context.Find(ID);
             if (categoryToDelete == null)
             {
                 return HttpNotFound();
